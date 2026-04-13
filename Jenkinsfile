@@ -1,5 +1,11 @@
 pipeline {
-    agent any
+    agent {
+        node {
+            label ''
+            // Esto le da permisos de administrador (root) al pipeline
+            customWorkspace "/var/jenkins_home/workspace/${env.JOB_NAME}"
+        }
+    }
 
     stages {
         stage('Checkout (Ingredientes)') {
@@ -11,14 +17,15 @@ pipeline {
 
         stage('Test (Control de Calidad)') {
             steps {
-                echo 'Instalando herramientas y ejecutando auditoría...'
-                // 1. Actualiza pip e instala pybuilder dentro de Jenkins
-                sh 'pip install --upgrade pip'
-                sh 'pip install pybuilder'
-                
-                // 2. Ejecuta el comando usando 'python3 -m pyb' 
-                // para asegurar que encuentra el ejecutable recién instalado
-                sh 'python3 -m pyb' 
+                echo 'Instalando entorno y ejecutando PyBuilder...'
+                // Instalamos pip y pybuilder usando el usuario root
+                sh '''
+                    apt-get update
+                    apt-get install -y python3-pip
+                    python3 -m pip install --upgrade pip
+                    python3 -m pip install pybuilder
+                    python3 -m pyb
+                '''
             }
         }
 
@@ -31,12 +38,9 @@ pipeline {
 
         stage('Deploy (Servir)') {
             steps {
-                echo 'Desplegando en puerto seguro...'
-                // Limpieza de contenedores previos para evitar conflictos
+                echo 'Desplegando en puerto seguro 8443...'
                 sh 'docker stop bioguard-container || true'
                 sh 'docker rm bioguard-container || true'
-                
-                // MODIFICACIÓN: Despliegue en puerto seguro 8443
                 sh 'docker run -d -p 8443:5000 --name bioguard-container bioguard-app'
             }
         }
@@ -47,7 +51,7 @@ pipeline {
             echo '¡Auditoría superada! Vacunas seguras en puerto 8443.'
         }
         failure {
-            echo '¡BLOQUEO DE SEGURIDAD! El código no cumple los estándares.'
+            echo '¡BLOQUEO DE SEGURIDAD! Revisa los permisos o el código.'
         }
     }
 }
