@@ -8,23 +8,23 @@ pipeline {
             }
         }
 
-        stage('Test (Control de Calidad)') {
+stage('Test (Control de Calidad)') {
             steps {
                 echo 'Instalando PyBuilder y ejecutando auditoría...'
                 sh '''
-                    # 1. Aseguramos que pip esté presente sin intentar actualizarlo
+                    # 1. Aseguramos que pip esté presente
                     apt-get update
                     apt-get install -y python3-pip
                     
-                    # 2. Instalamos PyBuilder y Flask (usando la bandera para saltar el bloqueo)
+                    # 2. Instalamos PyBuilder y Flask
                     python3 -m pip install pybuilder flask --break-system-packages
                     
-                    # 3. Ejecutamos la auditoría
-                    python3 -m pyb
+                    # 3. Ejecutamos usando el binario directo de pybuilder
+                    export PATH=$PATH:/usr/local/bin
+                    pybuilder -v
                 '''
             }
         }
-
         stage('Build & Deploy') {
             steps {
                 sh 'docker build -t bioguard-app .'
