@@ -10,12 +10,16 @@ pipeline {
 
         stage('Test (Control de Calidad)') {
             steps {
-                echo 'Instalando herramientas de Python...'
+                echo 'Instalando PyBuilder y ejecutando auditoría...'
                 sh '''
+                    # 1. Aseguramos que pip esté presente sin intentar actualizarlo
                     apt-get update
                     apt-get install -y python3-pip
-                    python3 -m pip install --upgrade pip --break-system-packages
-                    python3 -m pip install pybuilder --break-system-packages
+                    
+                    # 2. Instalamos PyBuilder y Flask (usando la bandera para saltar el bloqueo)
+                    python3 -m pip install pybuilder flask --break-system-packages
+                    
+                    # 3. Ejecutamos la auditoría
                     python3 -m pyb
                 '''
             }
