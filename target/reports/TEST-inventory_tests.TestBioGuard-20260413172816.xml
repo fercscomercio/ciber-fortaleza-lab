@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="inventory_tests.TestBioGuard-20260413172816" tests="3" file="inventory_tests.py" time="0.000" timestamp="2026-04-13T17:28:16" failures="0" errors="3" skipped="0">
+	<testcase classname="inventory_tests.TestBioGuard" name="test_exception_negative_qty" time="0.000" timestamp="2026-04-13T17:28:16">
+		<error type="NameError" message="name 'cite' is not defined"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Vespertino\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 58, in testPartExecutor
+    yield
+  File "C:\Users\Vespertino\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 630, in run
+    self._callSetUp()
+  File "C:\Users\Vespertino\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 586, in _callSetUp
+    self.setUp()
+  File "c:\users\vespertino\desktop\bioguard_project\src\unittest\python\inventory_tests.py", line 7, in setUp
+    self.vm = VaccineManager() [cite: 116, 215]
+    ^^^^^^^^^^^^^^^^^
+NameError: name 'cite' is not defined
+]]></error>
+	</testcase>
+	<testcase classname="inventory_tests.TestBioGuard" name="test_range_temperature" time="0.000" timestamp="2026-04-13T17:28:16">
+		<error type="NameError" message="name 'cite' is not defined"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Vespertino\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 58, in testPartExecutor
+    yield
+  File "C:\Users\Vespertino\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 630, in run
+    self._callSetUp()
+  File "C:\Users\Vespertino\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 586, in _callSetUp
+    self.setUp()
+  File "c:\users\vespertino\desktop\bioguard_project\src\unittest\python\inventory_tests.py", line 7, in setUp
+    self.vm = VaccineManager() [cite: 116, 215]
+    ^^^^^^^^^^^^^^^^^
+NameError: name 'cite' is not defined
+]]></error>
+	</testcase>
+	<testcase classname="inventory_tests.TestBioGuard" name="test_stock_incremental" time="0.000" timestamp="2026-04-13T17:28:16">
+		<error type="NameError" message="name 'cite' is not defined"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Vespertino\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 58, in testPartExecutor
+    yield
+  File "C:\Users\Vespertino\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 630, in run
+    self._callSetUp()
+  File "C:\Users\Vespertino\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 586, in _callSetUp
+    self.setUp()
+  File "c:\users\vespertino\desktop\bioguard_project\src\unittest\python\inventory_tests.py", line 7, in setUp
+    self.vm = VaccineManager() [cite: 116, 215]
+    ^^^^^^^^^^^^^^^^^
+NameError: name 'cite' is not defined
+]]></error>
+	</testcase>
+</testsuite>

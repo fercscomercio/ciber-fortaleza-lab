@@ -1,0 +1,51 @@
+* Creating isolated environment: venv+pip...
+* Installing packages in isolated environment:
+  - setuptools >= 40.8.0
+* Getting build dependencies for wheel...
+WARNING: '.' not a valid package name; please use only .-separated package names in setup.py
+running egg_info
+writing BioGuard_Inventory.egg-info\PKG-INFO
+writing dependency_links to BioGuard_Inventory.egg-info\dependency_links.txt
+writing namespace_packages to BioGuard_Inventory.egg-info\namespace_packages.txt
+writing top-level names to BioGuard_Inventory.egg-info\top_level.txt
+reading manifest file 'BioGuard_Inventory.egg-info\SOURCES.txt'
+writing manifest file 'BioGuard_Inventory.egg-info\SOURCES.txt'
+* Building wheel...
+WARNING: '.' not a valid package name; please use only .-separated package names in setup.py
+running bdist_wheel
+running build
+running build_py
+creating build\lib
+copying inventory.py -> build\lib
+copying validator.py -> build\lib
+copying __init__.py -> build\lib
+installing to build\bdist.win-amd64\wheel
+running install
+running install_lib
+creating build\bdist.win-amd64\wheel
+copying build\lib\inventory.py -> build\bdist.win-amd64\wheel\.
+copying build\lib\validator.py -> build\bdist.win-amd64\wheel\.
+copying build\lib\__init__.py -> build\bdist.win-amd64\wheel\.
+running install_egg_info
+running egg_info
+writing BioGuard_Inventory.egg-info\PKG-INFO
+writing dependency_links to BioGuard_Inventory.egg-info\dependency_links.txt
+writing namespace_packages to BioGuard_Inventory.egg-info\namespace_packages.txt
+writing top-level names to BioGuard_Inventory.egg-info\top_level.txt
+reading manifest file 'BioGuard_Inventory.egg-info\SOURCES.txt'
+writing manifest file 'BioGuard_Inventory.egg-info\SOURCES.txt'
+Copying BioGuard_Inventory.egg-info to build\bdist.win-amd64\wheel\.\BioGuard_Inventory-1.0.dev0-py3.12.egg-info
+running install_scripts
+creating build\bdist.win-amd64\wheel\bioguard_inventory-1.0.dev0.dist-info\WHEEL
+creating 'c:\\users\\vespertino\\desktop\\bioguard_project\\target\\dist\\bioguard_inventory-1.0.dev0\\dist\\.tmp-mf46k_z8\\bioguard_inventory-1.0.dev0-py3-none-any.whl' and adding 'build\\bdist.win-amd64\\wheel' to it
+adding '__init__.py'
+adding 'inventory.py'
+adding 'validator.py'
+adding 'bioguard_inventory-1.0.dev0.dist-info/METADATA'
+adding 'bioguard_inventory-1.0.dev0.dist-info/WHEEL'
+adding 'bioguard_inventory-1.0.dev0.dist-info/namespace_packages.txt'
+adding 'bioguard_inventory-1.0.dev0.dist-info/top_level.txt'
+adding 'bioguard_inventory-1.0.dev0.dist-info/zip-safe'
+adding 'bioguard_inventory-1.0.dev0.dist-info/RECORD'
+removing build\bdist.win-amd64\wheel
+Successfully built bioguard_inventory-1.0.dev0-py3-none-any.whl

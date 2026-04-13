@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="inventory_tests.TestBioGuard-20260413172908" tests="3" file="inventory_tests.py" time="0.000" timestamp="2026-04-13T17:29:08" failures="0" errors="0" skipped="0">
+	<testcase classname="inventory_tests.TestBioGuard" name="test_exception_negative_qty" time="0.000" timestamp="2026-04-13T17:29:08"/>
+	<testcase classname="inventory_tests.TestBioGuard" name="test_range_temperature" time="0.000" timestamp="2026-04-13T17:29:08"/>
+	<testcase classname="inventory_tests.TestBioGuard" name="test_stock_incremental" time="0.000" timestamp="2026-04-13T17:29:08"/>
+</testsuite>

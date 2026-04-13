@@ -1,0 +1,45 @@
+* Creating isolated environment: venv+pip...
+* Installing packages in isolated environment:
+  - setuptools >= 40.8.0
+* Getting build dependencies for sdist...
+WARNING: '.' not a valid package name; please use only .-separated package names in setup.py
+running egg_info
+creating BioGuard_Inventory.egg-info
+writing BioGuard_Inventory.egg-info\PKG-INFO
+writing dependency_links to BioGuard_Inventory.egg-info\dependency_links.txt
+writing namespace_packages to BioGuard_Inventory.egg-info\namespace_packages.txt
+writing top-level names to BioGuard_Inventory.egg-info\top_level.txt
+writing manifest file 'BioGuard_Inventory.egg-info\SOURCES.txt'
+reading manifest file 'BioGuard_Inventory.egg-info\SOURCES.txt'
+writing manifest file 'BioGuard_Inventory.egg-info\SOURCES.txt'
+* Building sdist...
+WARNING: '.' not a valid package name; please use only .-separated package names in setup.py
+running sdist
+running egg_info
+writing BioGuard_Inventory.egg-info\PKG-INFO
+writing dependency_links to BioGuard_Inventory.egg-info\dependency_links.txt
+writing namespace_packages to BioGuard_Inventory.egg-info\namespace_packages.txt
+writing top-level names to BioGuard_Inventory.egg-info\top_level.txt
+reading manifest file 'BioGuard_Inventory.egg-info\SOURCES.txt'
+writing manifest file 'BioGuard_Inventory.egg-info\SOURCES.txt'
+warning: sdist: standard file not found: should have one of README, README.rst, README.txt, README.md
+
+running check
+creating bioguard_inventory-1.0.dev0
+creating bioguard_inventory-1.0.dev0\BioGuard_Inventory.egg-info
+copying files to bioguard_inventory-1.0.dev0...
+copying __init__.py -> bioguard_inventory-1.0.dev0
+copying inventory.py -> bioguard_inventory-1.0.dev0
+copying setup.py -> bioguard_inventory-1.0.dev0
+copying validator.py -> bioguard_inventory-1.0.dev0
+copying BioGuard_Inventory.egg-info\PKG-INFO -> bioguard_inventory-1.0.dev0\BioGuard_Inventory.egg-info
+copying BioGuard_Inventory.egg-info\SOURCES.txt -> bioguard_inventory-1.0.dev0\BioGuard_Inventory.egg-info
+copying BioGuard_Inventory.egg-info\dependency_links.txt -> bioguard_inventory-1.0.dev0\BioGuard_Inventory.egg-info
+copying BioGuard_Inventory.egg-info\namespace_packages.txt -> bioguard_inventory-1.0.dev0\BioGuard_Inventory.egg-info
+copying BioGuard_Inventory.egg-info\top_level.txt -> bioguard_inventory-1.0.dev0\BioGuard_Inventory.egg-info
+copying BioGuard_Inventory.egg-info\zip-safe -> bioguard_inventory-1.0.dev0\BioGuard_Inventory.egg-info
+copying BioGuard_Inventory.egg-info\SOURCES.txt -> bioguard_inventory-1.0.dev0\BioGuard_Inventory.egg-info
+Writing bioguard_inventory-1.0.dev0\setup.cfg
+Creating tar archive
+removing 'bioguard_inventory-1.0.dev0' (and everything under it)
+Successfully built bioguard_inventory-1.0.dev0.tar.gz

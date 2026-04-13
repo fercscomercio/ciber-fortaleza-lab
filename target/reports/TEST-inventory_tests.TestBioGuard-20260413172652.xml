@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="inventory_tests.TestBioGuard-20260413172652" tests="3" file="inventory_tests.py" time="0.000" timestamp="2026-04-13T17:26:53" failures="0" errors="2" skipped="0">
+	<testcase classname="inventory_tests.TestBioGuard" name="test_range_temperature" time="0.000" timestamp="2026-04-13T17:26:53"/>
+	<testcase classname="inventory_tests.TestBioGuard" name="test_exception_negative_qty" time="0.000" timestamp="2026-04-13T17:26:53">
+		<error type="NameError" message="name 'cite' is not defined"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Vespertino\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 58, in testPartExecutor
+    yield
+  File "C:\Users\Vespertino\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 634, in run
+    self._callTestMethod(testMethod)
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vespertino\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 589, in _callTestMethod
+    if method() is not None:
+    ^^^^^^^^^^^^^^^^^
+  File "c:\users\vespertino\desktop\bioguard_project\src\unittest\python\inventory_tests.py", line 17, in test_exception_negative_qty
+    self.vm.add_doses("Error_Vial", -1)
+    ^^^^^^^^^^^^^^^^^
+  File "c:\users\vespertino\desktop\bioguard_project\src\main\python\inventory.py", line 7, in add_doses
+    raise ValueError("Cantidad negativa detectada") [cite: 187, 188]
+    ^^^^^^^^^^^^^^^^^
+NameError: name 'cite' is not defined
+]]></error>
+	</testcase>
+	<testcase classname="inventory_tests.TestBioGuard" name="test_stock_incremental" time="0.000" timestamp="2026-04-13T17:26:53">
+		<error type="NameError" message="name 'cite' is not defined"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Vespertino\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 58, in testPartExecutor
+    yield
+  File "C:\Users\Vespertino\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 634, in run
+    self._callTestMethod(testMethod)
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vespertino\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 589, in _callTestMethod
+    if method() is not None:
+    ^^^^^^^^^^^^^^^^^
+  File "c:\users\vespertino\desktop\bioguard_project\src\unittest\python\inventory_tests.py", line 10, in test_stock_incremental
+    self.vm.add_doses("Moderna", 100)
+    ^^^^^^^^^^^^^^^^^
+  File "c:\users\vespertino\desktop\bioguard_project\src\main\python\inventory.py", line 8, in add_doses
+    self.stock[name] = self.stock.get(name, 0) + qty [cite: 189]
+    ^^^^^^^^^^^^^^^^^
+NameError: name 'cite' is not defined
+]]></error>
+	</testcase>
+</testsuite>
