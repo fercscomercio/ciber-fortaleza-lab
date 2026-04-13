@@ -11,9 +11,9 @@ pipeline {
 
         stage('Test (Control de Calidad)') {
             steps {
-                echo 'Ejecutando pruebas de calidad...'
-                // Aquí cambiaremos el comando en el siguiente paso
-                sh 'python test.py'
+                echo 'Ejecutando auditoría con PyBuilder...'
+                // MODIFICACIÓN 1: Usamos pyb para validar cobertura y PEP8
+                sh 'pyb' 
             }
         }
 
@@ -26,19 +26,21 @@ pipeline {
 
         stage('Deploy (Servir)') {
             steps {
-                echo 'Desplegando la aplicación...'
-                // Aquí cambiaremos el puerto en el siguiente paso
-                sh 'docker run -d -p 5000:5000 --name bioguard-container bioguard-app'
+                echo 'Desplegando en puerto seguro...'
+                sh 'docker stop bioguard-container || true'
+                sh 'docker rm bioguard-container || true'
+                // MODIFICACIÓN 2: Cambiamos el puerto de escucha al 8443
+                sh 'docker run -d -p 8443:5000 --name bioguard-container bioguard-app'
             }
         }
     }
 
     post {
         success {
-            echo '¡La hamburguesa... digo, la vacuna, está lista y segura!'
+            echo '¡Auditoría superada! Vacunas seguras en puerto 8443.'
         }
         failure {
-            echo '¡Error en la fábrica! Revisa los logs.'
+            echo '¡BLOQUEO DE SEGURIDAD! El código no cumple los estándares.'
         }
     }
 }
