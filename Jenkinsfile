@@ -11,9 +11,14 @@ pipeline {
 
         stage('Test (Control de Calidad)') {
             steps {
-                echo 'Ejecutando auditoría con PyBuilder...'
-                // MODIFICACIÓN 1: Usamos pyb para validar cobertura y PEP8
-                sh 'pyb' 
+                echo 'Instalando herramientas y ejecutando auditoría...'
+                // 1. Actualiza pip e instala pybuilder dentro de Jenkins
+                sh 'pip install --upgrade pip'
+                sh 'pip install pybuilder'
+                
+                // 2. Ejecuta el comando usando 'python3 -m pyb' 
+                // para asegurar que encuentra el ejecutable recién instalado
+                sh 'python3 -m pyb' 
             }
         }
 
@@ -27,9 +32,11 @@ pipeline {
         stage('Deploy (Servir)') {
             steps {
                 echo 'Desplegando en puerto seguro...'
+                // Limpieza de contenedores previos para evitar conflictos
                 sh 'docker stop bioguard-container || true'
                 sh 'docker rm bioguard-container || true'
-                // MODIFICACIÓN 2: Cambiamos el puerto de escucha al 8443
+                
+                // MODIFICACIÓN: Despliegue en puerto seguro 8443
                 sh 'docker run -d -p 8443:5000 --name bioguard-container bioguard-app'
             }
         }
