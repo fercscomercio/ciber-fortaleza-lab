@@ -7,23 +7,22 @@ pipeline {
                 checkout scm
             }
         }
-
+        
 stage('Test (Control de Calidad)') {
-            steps {
-                echo 'Instalando PyBuilder y ejecutando auditoría...'
-                sh '''
-                    # 1. Aseguramos pip (ya lo tienes, pero por seguridad)
-                    apt-get update && apt-get install -y python3-pip
-                    
-                    # 2. Instalamos PyBuilder
-                    python3 -m pip install pybuilder flask --break-system-packages
-                    
-                    # 3. EJECUCIÓN DIRECTA (Aquí está el truco)
-                    # Usamos 'python3 -m pybuilder' en lugar de solo 'pybuilder'
-                    python3 -m pybuilder -v
-                '''
-            }
-        }
+    steps {
+        echo 'Instalando PyBuilder y ejecutando auditoría...'
+        sh '''
+            # 1. Aseguramos que las herramientas estén ahí
+            apt-get update && apt-get install -y python3-pip
+            
+            # 2. Instalamos los paquetes necesarios
+            python3 -m pip install pybuilder flask --break-system-packages
+            
+            # 3. EJECUCIÓN: Invocamos el punto de entrada directo de PyBuilder
+            python3 -m pybuilder.cli -v
+        '''
+    }
+}
         
         stage('Build & Deploy') {
             steps {
